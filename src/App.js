@@ -1,14 +1,18 @@
 import "./App.css";
-import Header from "./components/header/Header";
 import Home from "./components/home/Home";
+import Checkout from "./components/checkout/Checkout";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    //BEM Convention for naming
-    <div className="app">
-      <Header />
-      <Home />
-    </div>
+    <Router>
+      <div className="app">
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/checkout" element={<Checkout />}></Route>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
